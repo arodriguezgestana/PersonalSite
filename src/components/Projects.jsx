@@ -14,6 +14,12 @@ export default function Projects() {
             description: "Plataforma de gestión de socios para centros deportivos.",
             image: "",
             link: "https://fithub.uy"
+        },
+        {
+            name: 'Pieza Clave',
+            description: "Plataforma de herramientas psicoeducativas.",
+            image: "https://www.piezaclave.uy/assets/logo-g79K7WoZ.jpg",
+            link: "https://piezaclave.uy"
         }
     ]
 
