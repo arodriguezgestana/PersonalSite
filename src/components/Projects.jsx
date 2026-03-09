@@ -7,7 +7,7 @@ export default function Projects() {
             name: "MIONE S.A.",
             description: "Landing page para Mione S.A., empresa de alimentos para mascotas. ",
             image: "https://pub-4b1bdad496cd4d34be9a3c584d3de654.r2.dev/logo.webp",
-            link: "https://mi-one-six.vercel.app/"
+            link: "https://mione.com.uy"
         },
         {
             name: 'Fithub',
