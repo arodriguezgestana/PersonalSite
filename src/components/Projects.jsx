@@ -5,14 +5,14 @@ export default function Projects() {
     const PROJECTS = [
         {
             name: "MIONE S.A.",
-            description: "Landing page para Mione S.A., empresa de alimentos para mascotas. ",
+            description: "Landing page para Mione S.A., empresa de alimentos para mascotas. En conjunto con Agencia Bruta. ",
             image: "https://pub-4b1bdad496cd4d34be9a3c584d3de654.r2.dev/logo.webp",
             link: "https://mione.com.uy"
         },
         {
             name: 'Fithub',
             description: "Plataforma de gestión de socios para centros deportivos.",
-            image: "",
+            image: "https://www.agusberois.dev/assets/logo-CMomad0j.png",
             link: "https://fithub.uy"
         },
         {
