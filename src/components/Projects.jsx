@@ -20,6 +20,12 @@ export default function Projects() {
             description: "Plataforma de herramientas psicoeducativas.",
             image: "https://www.piezaclave.uy/assets/logo-g79K7WoZ.jpg",
             link: "https://piezaclave.uy"
+        },
+        {
+            name: 'Gimnasio Oxigenarte',
+            description: 'Landing page para Gimnasio Oxigenarte.',
+            image: 'https://oxigenarte.vercel.app/assets/logo-2EmJ37y_.jpg',
+            link: 'https://oxigenarte.vercel.app'
         }
     ]
 
