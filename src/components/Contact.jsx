@@ -75,16 +75,15 @@ export default function Contact() {
             <h2 className="section-title">
                 <span className="green">04.</span> ¿Qué sigue?
             </h2>
-            
-            <div 
+
+            <div
                 ref={ref}
                 className={`contact-content reveal ${isVisible ? 'active' : ''}`}
             >
                 <h3 className="contact-heading">Ponte en contacto</h3>
                 <p className="contact-desc">
-                    Actualmente estoy abierto a nuevas oportunidades de trabajo. 
-                    Si tienes una pregunta, un proyecto en mente, o simplemente quieres saludar, 
-                    ¡haré todo lo posible por responderte!
+                    Si tienes una pregunta, un proyecto en mente, o simplemente quieres saludar,
+                    este formulario es para ti.
                 </p>
 
                 <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
