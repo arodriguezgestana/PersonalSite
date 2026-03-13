@@ -17,6 +17,8 @@
     width: 65px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1002;
 }
 
 .logo:hover {
@@ -69,17 +71,34 @@
     border: none;
     color: var(--accent);
     cursor: pointer;
+    position: relative;
+    z-index: 1002;
+    padding: 0.25rem;
+    /* Mejor tap target en mobile */
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== OVERLAY ===== */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(2, 12, 27, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .header {
-        padding: 1rem;
+        padding: 0.875rem 1.25rem;
     }
 
     .menu-btn {
-        display: block;
-        z-index: 1001;
+        display: flex;
     }
 
     .nav {
@@ -87,7 +106,7 @@
         top: 0;
         right: -100%;
         height: 100vh;
-        width: 70vw;
+        width: 75vw;
         max-width: 300px;
         background-color: var(--bg-secondary);
         box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
@@ -95,6 +114,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 1001;
     }
 
     .nav.open {
@@ -103,10 +123,24 @@
 
     .nav ul {
         flex-direction: column;
-        gap: 2rem;
+        gap: 2.5rem;
+        text-align: center;
     }
 
     .nav ul li a {
         font-size: 1.1rem;
+        /* Mejor tap target */
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        width: 55px;
     }
 }

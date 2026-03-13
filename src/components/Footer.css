@@ -17,13 +17,19 @@
 /* SOCIAL ICONS */
 .footer-social {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.75rem;
 }
 
 .footer-social a {
     color: var(--text-secondary);
     font-size: 1.4rem;
     transition: color 0.3s ease, transform 0.2s ease;
+    /* Mejor tap target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .footer-social a:hover {
@@ -42,16 +48,32 @@
     font-size: 0.8rem;
     color: var(--text-secondary);
     transition: color 0.3s ease;
+    text-align: center;
 }
 
 .footer-info a:hover p {
     color: var(--accent);
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         text-align: center;
+        padding: 0 1.25rem;
+    }
+
+    .footer-social {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    .footer-social a {
+        font-size: 1.5rem;
     }
 }

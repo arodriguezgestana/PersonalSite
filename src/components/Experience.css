@@ -60,15 +60,42 @@
 .experience-quote {
     margin-top: 4rem;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: var(--text-secondary);
     line-height: 1.6;
+    padding: 0 1rem;
 }
 
-/* MOBILE */
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .experience-item {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .experience-quote {
+        margin-top: 3rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 480px) {
     .experience-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
+    }
+
+    .experience-icon {
+        font-size: 1.9rem;
+    }
+
+    .experience-name {
+        font-size: 0.78rem;
     }
 }
