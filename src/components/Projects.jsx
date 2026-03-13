@@ -23,7 +23,7 @@ export default function Projects() {
         },
         {
             name: 'Pieza Clave',
-            description: "Plataforma de herramientas psicoeducativas enfocada en el bienestar mental. Incluye recursos interactivos y un diseño calmado y accesible para todos los usuarios.",
+            description: "Plataforma de herramientas psicoeducativas enfocada en el bienestar mental. Incluye recursos interactivos y un diseño accesible para todos los usuarios.",
             image: "https://www.piezaclave.uy/assets/logo-g79K7WoZ.jpg",
             link: "https://piezaclave.uy",
             tags: ["React", "Firebase"]
