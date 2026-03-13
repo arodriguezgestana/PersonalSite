@@ -6,13 +6,15 @@ export default function Footer() {
         <footer className='footer'>
             <div className="footer-content">
                 <div className="footer-social">
-                    <a href="https://www.linkedin.com/in/agustin-rodriguez-berois/" target="_blank"><FaLinkedin /></a>
-                    <a href="https://www.instagram.com/agusberoisdev/" target="_blank"><FaInstagram /></a>
-                    <a href="https://github.com/agusberois" target="_blank"><FaGithub /></a>
-                    <a href="https://wa.me/59891920278" target="_blank"><FaWhatsapp /></a>
+                    <a href="https://github.com/agusberois" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+                    <a href="https://www.linkedin.com/in/agustin-rodriguez-berois/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+                    <a href="https://www.instagram.com/agusberoisdev/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+                    <a href="https://wa.me/59891920278" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
                 </div>
                 <div className="footer-info">
-                    <p>Agustin Berois - Todos los derechos reservados © {new Date().getFullYear()}</p>
+                    <a href="https://github.com/agusberois/PersonalSite" target="_blank" rel="noopener noreferrer">
+                        <p>Diseñado y desarrollado por Agustín Berois</p>
+                    </a>
                 </div>
             </div>
         </footer>

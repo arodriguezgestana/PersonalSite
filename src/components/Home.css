@@ -3,41 +3,84 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 0;
+}
+
+.home-content {
+    max-width: 800px;
 }
 
 /* Intro */
 .intro {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 /* Nombre */
 .title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 700;
-    color: #e5e7eb;
-    margin-bottom: 0.3rem;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
 }
 
 /* Rol */
 .subtitle {
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    color: #8892b0;
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 
 /* Descripción */
 .description {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #ccd6f6;
-    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin-bottom: 3rem;
 }
 
+/* Actions */
+.home-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-transparent);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    color: var(--text-main);
+    border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+    color: var(--accent);
+}
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
@@ -46,7 +89,9 @@
         text-align: left;
     }
 
-    .description {
-        font-size: 0.95rem;
+    .home-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }

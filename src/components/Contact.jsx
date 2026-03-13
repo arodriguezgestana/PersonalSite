@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import ReCAPTCHA from 'react-google-recaptcha'
+import useReveal from '../hooks/useReveal'
 import './Contact.css'
 
 export default function Contact() {
+    const { ref, isVisible } = useReveal();
     const formRef = useRef(null)
 
     const [form, setForm] = useState({
@@ -14,7 +16,6 @@ export default function Contact() {
     })
 
     const [captchaOk, setCaptchaOk] = useState(false)
-
     const [loading, setLoading] = useState(false)
 
     const handleChange = (e) => {
@@ -31,7 +32,6 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setLoading(true)
-
 
         if (!captchaOk) {
             alert('Por favor, verifica el captcha')
@@ -71,56 +71,71 @@ export default function Contact() {
     }
 
     return (
-        <div id="contact" className="contact">
-            <h2>Contacto</h2>
-            <p>¿Querés que trabajemos juntos? ¡Hablemos!</p>
+        <section id="contact" className="contact">
+            <h2 className="section-title">
+                <span className="green">04.</span> ¿Qué sigue?
+            </h2>
+            
+            <div 
+                ref={ref}
+                className={`contact-content reveal ${isVisible ? 'active' : ''}`}
+            >
+                <h3 className="contact-heading">Ponte en contacto</h3>
+                <p className="contact-desc">
+                    Actualmente estoy abierto a nuevas oportunidades de trabajo. 
+                    Si tienes una pregunta, un proyecto en mente, o simplemente quieres saludar, 
+                    ¡haré todo lo posible por responderte!
+                </p>
 
-            <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Nombre"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                />
+                <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Nombre completo"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
+                    />
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Correo electrónico"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                    />
 
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Teléfono"
-                    value={form.phone}
-                    required
-                    onChange={handleChange}
-                />
+                    <input
+                        type="text"
+                        name="phone"
+                        placeholder="Teléfono (opcional)"
+                        value={form.phone}
+                        onChange={handleChange}
+                    />
 
-                <textarea
-                    name="message"
-                    placeholder="Mensaje"
-                    rows="6"
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                />
+                    <textarea
+                        name="message"
+                        placeholder="Escribe tu mensaje aquí..."
+                        rows="5"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
+                    />
 
-                <ReCAPTCHA
-                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                    onChange={handleCaptchaChange}
-                />
+                    <div className="captcha-container">
+                        <ReCAPTCHA
+                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                            onChange={handleCaptchaChange}
+                            theme="dark"
+                        />
+                    </div>
 
-                <button type="submit" disabled={loading || !captchaOk}>
-                    {loading ? 'Enviando...' : !captchaOk ? 'Verificar' : 'Enviar'}
-                </button>
-            </form>
-        </div>
+                    <button type="submit" className="submit-btn" disabled={loading || !captchaOk}>
+                        {loading ? 'Enviando...' : !captchaOk ? 'Verificar Captcha' : 'Enviar Mensaje'}
+                    </button>
+                </form>
+            </div>
+        </section>
     )
 }

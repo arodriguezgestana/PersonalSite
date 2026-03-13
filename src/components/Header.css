@@ -2,49 +2,64 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #0a192f;
-    border-bottom: 1px solid #6281a5;
+    padding: 1rem 2rem;
+    background-color: var(--nav-backdrop);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--bg-tertiary);
     position: sticky;
     top: 0;
     z-index: 1000;
-    opacity: 0.8;
-
+    transition: all 0.3s ease;
 }
 
 .logo {
-    width: 75px;
+    width: 65px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* ===== NAV DESKTOP ===== */
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    align-items: center;
     font-weight: 500;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
 }
 
 .nav ul li {
     cursor: pointer;
-    padding: 10px 15px;
 }
 
 .nav ul li a {
     text-decoration: none;
-    color: #ececec;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+    padding: 0.5rem;
 }
 
 .nav ul li a:hover {
-    color: #93c5fd;
+    color: var(--accent);
 }
 
 /* contacto estilo botón */
-.contacto {
-    border: 1px solid #6281a5;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #6281a5;
+.contacto a {
+    border: 1px solid var(--accent);
+    color: var(--accent) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contacto a:hover {
+    background-color: var(--accent-transparent);
 }
 
 /* ===== HAMBURGER BUTTON ===== */
@@ -52,48 +67,46 @@
     display: none;
     background: none;
     border: none;
-    color: #ececec;
+    color: var(--accent);
     cursor: pointer;
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
     .menu-btn {
         display: block;
         z-index: 1001;
     }
 
     .nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #0a192f;
-        border-bottom: 1px solid #6281a5;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70vw;
+        max-width: 300px;
+        background-color: var(--bg-secondary);
+        box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
+        transition: right 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav.open {
-        max-height: 400px;
+        right: 0;
     }
 
     .nav ul {
         flex-direction: column;
-        padding: 1rem 0;
-        gap: 0;
+        gap: 2rem;
     }
 
-    .nav ul li {
-        text-align: center;
-        padding: 1rem;
+    .nav ul li a {
+        font-size: 1.1rem;
     }
-
-    .contacto {
-        border: none;
-        box-shadow: none;
-    }
-
-
 }
