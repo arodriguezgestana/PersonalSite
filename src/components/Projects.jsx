@@ -9,14 +9,14 @@ export default function Projects() {
     const PROJECTS = [
         {
             name: "MIONE S.A.",
-            description: "Landing page corporativa para Mione S.A., empresa líder en alimentos para mascotas. Desarrollada en conjunto con Agencia Bruta, cuenta con un diseño a medida, optimización SEO y un panel de gestión integrado.",
+            description: "Landing page corporativa para Mione S.A., empresa líder en alimentos para mascotas. Desarrollada en conjunto con Agencia Bruta, cuenta con un diseño a medida.",
             image: "https://pub-4b1bdad496cd4d34be9a3c584d3de654.r2.dev/logo.webp",
             link: "https://mione.com.uy",
             tags: ["React", "Firebase"]
         },
         {
             name: 'Fithub',
-            description: "Plataforma integral SaaS de gestión de socios para gimnasios y centros deportivos. Permite el control de cuotas, rutinas, perfiles de usuario y gestión administrativa completa.",
+            description: "Plataforma integral SaaS de gestión de socios para gimnasios y centros deportivos. Permite el control completo de socios, tanto asistencias, membresías, pagos y más.",
             image: "https://www.agusberois.dev/assets/logo-CMomad0j.png",
             link: "https://fithub.uy",
             tags: ["React", "Node.js", "PostgreSQL", "Firebase"]
@@ -30,7 +30,7 @@ export default function Projects() {
         },
         {
             name: 'Gimnasio Oxigenarte',
-            description: 'Landing page para Gimnasio Oxigenarte.',
+            description: 'Landing page para Gimnasio Oxigenarte, con un diseño moderno y atractivo.',
             image: 'https://oxigenarte.vercel.app/assets/logo-2EmJ37y_.jpg',
             link: 'https://oxigenarte.vercel.app',
             tags: ["ReactJS"]
